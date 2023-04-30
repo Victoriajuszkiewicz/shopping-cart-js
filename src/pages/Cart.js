@@ -3,7 +3,7 @@ import React from "react";
 export const Cart = (props) => {
 	const { cartItems, removeFromCart, setCartItems } = props;
 
-	console.log(cartItems);
+	console.log("this is what you need", cartItems);
 
 	function totalPrice(cartItems = []) {
 		let total = 0;
@@ -39,6 +39,7 @@ export const Cart = (props) => {
 					cartItems.map((i) => {
 						return (
 							<div>
+								<img src={i.imageLink} alt="this is poster for a book" />
 								<h2>{i.title}</h2>
 								<p>Author: {i.author}</p>
 								<p>Price: €{i.price}</p>

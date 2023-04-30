@@ -50,6 +50,7 @@ function App() {
 				author: item.author,
 				title: item.title,
 				price: item.price,
+				imageLink: item.imageLink,
 				quantity: 1,
 			};
 			setCartItems([...cartItems, newCartItem]);
