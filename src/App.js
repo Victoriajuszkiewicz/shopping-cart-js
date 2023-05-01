@@ -1,26 +1,24 @@
+//Styling
 import "./App.css";
+//Stuff needed
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.js";
+import { useEffect, useState } from "react";
+//Components
 import { Cart } from "./pages/Cart.js";
 import { Shop } from "./pages/Shop.js";
-import { useEffect, useState } from "react";
+// Randomise id
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
+	//All data we get and display
 	const [allBooks, setAllBooks] = useState([]);
+	//All items clicked(added) to cart
+	const [cartItems, setCartItems] = useState([]);
 
 	useEffect(() => {
 		getBooks();
 	}, []);
-
-	const getDefaultCart = () => {
-		let cart = {};
-		for (let i = 0; i < allBooks.length; i++) {
-			cart[i] = 0;
-		}
-		return cart;
-	};
-	const [cartItems, setCartItems] = useState([]);
 
 	async function getBooks() {
 		try {
@@ -46,6 +44,9 @@ function App() {
 			setCartItems(newCartItems);
 		} else {
 			const newCartItem = {
+				//uuidv4() is used to generate a unique ID for the newCartItem object being added to the cart
+				//WHY WE NEED IT? If we did not use a unique identifier like uuidv4(), we would need to rely on other properties of the item, such as its title or author, to identify it within the cart. However, this can lead to errors and inconsistencies if multiple items have the same title or author. By generating a unique identifier with uuidv4(), we can ensure that each item in the cart is uniquely identifiable, even if it shares other properties with other items.
+
 				id: uuidv4(),
 				author: item.author,
 				title: item.title,
@@ -57,14 +58,22 @@ function App() {
 		}
 	}
 	function removeFromCart(id) {
+		console.log("Remove from cart", id);
+		// find the index of the item in the cartItems array that matches the id we passed in
 		const itemIndex = cartItems.findIndex((item) => item.id === id);
+		// check if the item was found in the cartItems array
 		if (itemIndex >= 0) {
+			// make a copy of the cartItems array so we can edit it without mutating the original state
 			const newCartItems = [...cartItems];
-			if (newCartItems[itemIndex].quantity > 1) {
-				newCartItems[itemIndex].quantity--;
-			} else {
-				newCartItems.splice(itemIndex, 1);
-			}
+			// check if the quantity of the item at the itemIndex is greater than 1
+			// if (newCartItems[itemIndex].quantity > 1) {
+			// 	newCartItems[itemIndex].quantity--;
+			// } else {
+			// remove the item from the newCartItems array using the splice() method
+			// the splice() method modifies the array in place and returns the removed item(s)
+			newCartItems.splice(itemIndex, 1);
+			// }
+			// update the state with the newCartItems array, which now reflects the removed item
 			setCartItems(newCartItems);
 		}
 	}
