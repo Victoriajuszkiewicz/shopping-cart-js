@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Shop cart e-commerce simple app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple e-commerce project that allows users to add items to a cart, remove items from the cart, and view the total amount to pay.
 
-## Available Scripts
+## Getting Started
+
+To get started with this project, you can clone this repository to your local machine:
+
+### git clone (HTTP link)
 
 In the project directory, you can run:
 
