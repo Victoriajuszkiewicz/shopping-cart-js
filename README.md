@@ -38,3 +38,11 @@ The total amount to pay will be displayed at the bottom of the cart.
 - Bootstrap
 - HTML
 - CSS
+- Git/Github
+- React js
+
+## Demo
+
+## Features
+
+## Website overview
