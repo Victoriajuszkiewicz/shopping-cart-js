@@ -8,18 +8,14 @@ import "./NavBar.css";
 const NavBar = (props) => {
 	const { getProduct, cartItems } = props;
 
-	const EMPTY_FORM = {
-		book: "",
-	};
-	const [formBook, setFormBook] = useState({ book: "" });
+	const EMPTY_FORM = {};
+	const [formBook, setFormBook] = useState([]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		let formDetails = formBook;
 		getProduct(formDetails.book);
-		//console.log(formDetails);
 		setFormBook(EMPTY_FORM);
-		// navigate("/result");
 	};
 
 	const handleChange = (e) => {
@@ -77,7 +73,7 @@ const NavBar = (props) => {
 											aria-label="Search"
 											type="text"
 											name="book"
-											value={formBook.book}
+											value={formBook}
 											onChange={(e) => handleChange(e)}
 										/>
 									</div>
@@ -96,11 +92,8 @@ const NavBar = (props) => {
 
 						<li className="nav item">
 							<Link className="nav-link" to="/cart">
-								<button className="btn btn-primary">
-									<ShoppingCart
-										size={40}
-										style={{ paddingTop: 10, marginTop: 2 }}
-									/>{" "}
+								<button className="btn btn-primary" id="buttoncart">
+									<ShoppingCart size={40} />
 									<span className="badge badge-light">
 										{countTotalItemsQuantity(cartItems)}
 									</span>

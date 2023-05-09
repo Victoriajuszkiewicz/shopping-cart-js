@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 //Components
 import { Cart } from "./pages/Cart.js";
 import { Shop } from "./pages/Shop.js";
+import Result from "./pages/Result.js";
+
 // Randomise id
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,6 +17,7 @@ function App() {
 	const [allBooks, setAllBooks] = useState([]);
 	//All items clicked(added) to cart
 	const [cartItems, setCartItems] = useState([]);
+	const [searchResult, setSearchResult] = useState([]);
 
 	useEffect(() => {
 		getBooks();
@@ -35,16 +38,17 @@ function App() {
 	}
 
 	function getProduct(title) {
-		// let title2 = title.toLowerCase();
-		let productData = allBooks.find((product) =>
+		let productData = allBooks.filter((product) =>
 			product.title.toLowerCase().includes(title.toLowerCase())
 		);
+
 		console.log("reached", title);
-		if (productData === undefined) {
-			console.log("We don't have this book" + title);
-			return [];
+		if (productData.length === 0) {
+			console.log("We don't have this book: " + title);
+			setSearchResult([]);
+		} else {
+			setSearchResult(productData);
 		}
-		return productData;
 	}
 
 	function addToCart(item) {
@@ -109,6 +113,16 @@ function App() {
 								cartItems={cartItems}
 								removeFromCart={removeFromCart}
 								setCartItems={setCartItems}
+							/>
+						}
+					/>
+					<Route
+						path="/result"
+						element={
+							<Result
+								getProduct={getProduct}
+								allBooks={allBooks}
+								searchResult={searchResult}
 							/>
 						}
 					/>
