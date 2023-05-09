@@ -2,7 +2,14 @@
 	background-color: #ffc770;
 	color: white;
 	font-weight: 700;
+	margin-left: 0;
 }
 #inputsearch {
 	font-weight: 700;
+	width: 600px;
+	margin-right: 0;
+}
+#wholeform {
+	padding-top: 15px;
+	margin: 0 auto;
 }

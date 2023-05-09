@@ -33,6 +33,20 @@ function App() {
 			console.log(`Network error: ${err.message}`);
 		}
 	}
+
+	function getProduct(title) {
+		// let title2 = title.toLowerCase();
+		let productData = allBooks.find((product) =>
+			product.title.toLowerCase().includes(title.toLowerCase())
+		);
+		console.log("reached", title);
+		if (productData === undefined) {
+			console.log("We don't have this book" + title);
+			return [];
+		}
+		return productData;
+	}
+
 	function addToCart(item) {
 		const existingCartItemIndex = cartItems.findIndex(
 			(cartItem) => cartItem.id === item.id
@@ -82,7 +96,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				<NavBar />
+				<NavBar getProduct={getProduct} />
 				<Routes>
 					<Route
 						path="/"
