@@ -43,34 +43,53 @@ export const Cart = (props) => {
 		}
 	};
 
+	function shippingPrice(cartItems) {
+		if (totalPrice(cartItems).toFixed(2) > 50) {
+			return 0.0;
+		} else {
+			return 10;
+		}
+	}
+
 	return (
 		<div>
-			{cartItems < 1 ? (
-				<h2>Your cart is empty. Continue shopping.</h2>
-			) : (
-				<h2>Your items</h2>
-			)}
-
-			<div>
-				{cartItems &&
-					cartItems.map((i) => {
-						return (
-							<div>
-								<img src={i.imageLink} alt="this is poster for a book" />
-								<h2>{i.title}</h2>
-								<p>Author: {i.author}</p>
-								<p>Price: €{i.price}</p>
-								<p>Quantity:{i.quantity}</p>
-								<button onClick={() => handleAddQuantity(i.id)}>+</button>
-								<button onClick={() => handleSubtractQuantity(i.id)}>-</button>
-								<button onClick={() => removeFromCart(i.id)}>x</button>
-							</div>
-						);
-					})}
-			</div>
-			<div className="container" id="totalcart">
-				<h2>Total:€{totalPrice(cartItems).toFixed(2)} </h2>
-				<button>Checkout</button>
+			<div classname="container">
+				<div class="row">
+					<div class="col">
+						{cartItems < 1 ? (
+							<h2>Your cart is empty. Continue shopping.</h2>
+						) : (
+							<h2>Your items</h2>
+						)}
+						{cartItems &&
+							cartItems.map((i) => {
+								return (
+									<div>
+										<img src={i.imageLink} alt="this is poster for a book" />
+										<h2>{i.title}</h2>
+										<p>Author: {i.author}</p>
+										<p>Price: €{i.price}</p>
+										<p>Quantity:{i.quantity}</p>
+										<button onClick={() => handleAddQuantity(i.id)}>+</button>
+										<button onClick={() => handleSubtractQuantity(i.id)}>
+											-
+										</button>
+										<button onClick={() => removeFromCart(i.id)}>x</button>
+									</div>
+								);
+							})}
+					</div>
+					<div className="col" id="totalcart">
+						<h2>Summary</h2>
+						<h3>Products:€{totalPrice(cartItems).toFixed(2)} </h3>
+						<h3>Shipping:€{shippingPrice(cartItems)}</h3>
+						<h3>
+							Total:€
+							{(totalPrice(cartItems) + shippingPrice(cartItems)).toFixed(2)}
+						</h3>
+						<button>Checkout</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
