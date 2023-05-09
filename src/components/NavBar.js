@@ -6,7 +6,7 @@ import Logo from "..//img/logo.png";
 import "./NavBar.css";
 
 const NavBar = (props) => {
-	const { getProduct } = props;
+	const { getProduct, cartItems } = props;
 
 	const EMPTY_FORM = {
 		book: "",
@@ -33,6 +33,15 @@ const NavBar = (props) => {
 			[name]: value,
 		}));
 	};
+	function countTotalItemsQuantity(cartItems) {
+		let total = cartItems.map((item) => item.quantity);
+		console.log("This is SUMMMMM", total.length);
+		if (total.length != 0) {
+			return total.length;
+		} else {
+			return 0;
+		}
+	}
 
 	return (
 		<div>
@@ -87,10 +96,26 @@ const NavBar = (props) => {
 
 						<li className="nav item">
 							<Link className="nav-link" to="/cart">
-								<ShoppingCart
+								<button className="btn btn-primary">
+									<ShoppingCart
+										size={40}
+										style={{ paddingTop: 10, marginTop: 2 }}
+									/>{" "}
+									<span className="badge badge-light">
+										{countTotalItemsQuantity(cartItems)}
+									</span>
+								</button>
+								{/* <ShoppingCart
 									size={40}
 									style={{ paddingTop: 10, marginTop: 2 }}
-								/>
+								>
+									<span className="badge badge-warning">
+										Items:{" "}
+										{cartItems.length != 0
+											? countTotalItemsQuantity(cartItems)
+											: 0}
+									</span>
+								</ShoppingCart> */}
 							</Link>
 						</li>
 					</ul>

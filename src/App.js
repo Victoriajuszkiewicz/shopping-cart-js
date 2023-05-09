@@ -96,7 +96,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				<NavBar getProduct={getProduct} />
+				<NavBar getProduct={getProduct} cartItems={cartItems} />
 				<Routes>
 					<Route
 						path="/"
