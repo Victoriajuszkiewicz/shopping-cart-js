@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Cart } from "./pages/Cart.js";
 import { Shop } from "./pages/Shop.js";
 import Result from "./pages/Result.js";
+import PromoBar from "./components/PromoBar.js";
 
 // Randomise id
 import { v4 as uuidv4 } from "uuid";
@@ -100,6 +101,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
+				<PromoBar />
 				<NavBar getProduct={getProduct} cartItems={cartItems} />
 				<Routes>
 					<Route

@@ -93,7 +93,7 @@ const NavBar = (props) => {
 						<li className="nav item">
 							<Link className="nav-link" to="/cart">
 								<button className="btn btn-primary" id="buttoncart">
-									<ShoppingCart size={40} />
+									<ShoppingCart size={20} />
 									<span className="badge badge-light">
 										{countTotalItemsQuantity(cartItems)}
 									</span>
