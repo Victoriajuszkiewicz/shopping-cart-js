@@ -1,0 +1,16 @@
+.Popularmain {
+	background-color: #fbc97d;
+	height: 400px;
+	margin-top: 40px;
+	width: 100%;
+	margin: 0 auto; /* Center horizontally */
+	display: flex; /* Enable flexbox layout */
+	align-items: center;
+	justify-content: center;
+	border-radius: 33px;
+}
+.populartext {
+	text-align: left;
+	margin-top: 25px;
+	margin-bottom: 10px;
+}

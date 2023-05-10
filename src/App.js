@@ -9,6 +9,7 @@ import { Cart } from "./pages/Cart.js";
 import { Shop } from "./pages/Shop.js";
 import Result from "./pages/Result.js";
 import PromoBar from "./components/PromoBar.js";
+import Popular from "./components/Popular.js";
 
 // Randomise id
 import { v4 as uuidv4 } from "uuid";
@@ -103,6 +104,7 @@ function App() {
 			<Router>
 				<PromoBar />
 				<NavBar getProduct={getProduct} cartItems={cartItems} />
+				<Popular />
 				<Routes>
 					<Route
 						path="/"

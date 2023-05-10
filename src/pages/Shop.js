@@ -7,8 +7,8 @@ export const Shop = (props) => {
 
 	return (
 		<div className="Shop">
-			<div className="shopTitle">
-				<h1>Bookstore</h1>
+			<div className="container">
+				<h1 className="populartext">All Books</h1>
 				<div>
 					{allBooks &&
 						allBooks.map((book) => {

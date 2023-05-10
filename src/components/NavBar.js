@@ -45,7 +45,7 @@ const NavBar = (props) => {
 				<Link className="navbar-brand" to="/">
 					<img
 						src={Logo}
-						style={{ width: 70, padding: 0, margin: 0 }}
+						style={{ width: 70, paddingLeft: 10, margin: 0 }}
 						alt="this is a logo of bookish book store project,Online book store
 					Buy books online
 					Bookshop online
