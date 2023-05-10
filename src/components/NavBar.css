@@ -1,20 +1,28 @@
-#searchbutton {
+/* #searchbutton {
 	background-color: #ffc770;
 	color: white;
 	font-weight: 700;
 	margin-left: 0;
-}
-#inputsearch {
+} */
+/* #inputsearch {
 	font-weight: 700;
 	width: 600px;
 	margin-right: 0;
-}
-#wholeform {
+} */
+/* #wholeform {
 	padding-top: 15px;
 	margin: 0 auto;
-}
+} */
 
-#buttoncart {
+/* #buttoncart {
 	border-radius: 150px;
 	margin-top: 5px;
+} */
+#mainnavbar {
+	background-color: #f2d9db;
+}
+#submitbuttononform {
+	background-color: #dba859;
+	color: white;
+	font-weight: 700;
 }
