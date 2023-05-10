@@ -104,7 +104,7 @@ function App() {
 			<Router>
 				<PromoBar />
 				<NavBar getProduct={getProduct} cartItems={cartItems} />
-				<Popular />
+				
 				<Routes>
 					<Route
 						path="/"

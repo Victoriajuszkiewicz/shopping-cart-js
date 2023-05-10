@@ -41,11 +41,14 @@ const NavBar = (props) => {
 
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-light " id="mainnavbar">
+			<nav
+				className="navbar fixed-top navbar-expand-lg navbar-light "
+				id="mainnavbar"
+			>
 				<Link className="navbar-brand" to="/">
 					<img
 						src={Logo}
-						style={{ width: 70, paddingLeft: 10, margin: 0 }}
+						style={{ width: 80, paddingLeft: 20, margin: 0, marginTop: 10 }}
 						alt="this is a logo of bookish book store project,Online book store
 					Buy books online
 					Bookshop online
@@ -69,7 +72,7 @@ const NavBar = (props) => {
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<form
 						className="form-inline my-2 my-lg-0 input-group mx-auto"
-						style={{ maxWidth: "50%" }}
+						style={{ maxWidth: "50%", paddingTop: 20 }}
 					>
 						<input
 							className="form-control mr-sm-2"

@@ -16,12 +16,13 @@
 
 #buttoncart {
 	border-radius: 150px;
-	margin-top: 5px;
+	margin-top: 20px;
 	margin-right: 10px;
 	padding-right: 10px;
 }
 #mainnavbar {
 	background-color: #f2d9db;
+	height: 100px;
 }
 #submitbuttononform {
 	background-color: #dba859;

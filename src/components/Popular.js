@@ -3,7 +3,7 @@ import "./Popular.css";
 
 const Popular = () => {
 	return (
-		<div className="container">
+		<div className="container" id="maincontainerpopular">
 			<h1 className="populartext">Popular</h1>
 			<div className="Popularmain"></div>;
 		</div>

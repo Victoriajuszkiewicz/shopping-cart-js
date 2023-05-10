@@ -26,7 +26,6 @@ export const Cart = (props) => {
 		newCartItems[itemIndex].quantity++;
 		// update the state with the newCartItems array, which now includes the updated quantity value
 		setCartItems(newCartItems);
-		
 	};
 	const handleSubtractQuantity = (id) => {
 		//makes copy of a cartItems
@@ -54,7 +53,7 @@ export const Cart = (props) => {
 
 	return (
 		<div>
-			<div classname="container">
+			<div classname="container" id="maincontainerpopular">
 				<div class="row">
 					<div class="col">
 						{cartItems < 1 ? (

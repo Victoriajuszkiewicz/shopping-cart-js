@@ -1,4 +1,5 @@
 import React from "react";
+import Popular from "../components/Popular.js";
 
 export const Shop = (props) => {
 	const { allBooks, addToCart } = props;
@@ -7,29 +8,38 @@ export const Shop = (props) => {
 
 	return (
 		<div className="Shop">
+			<Popular />
 			<div className="container">
 				<h1 className="populartext">All Books</h1>
-				<div>
-					{allBooks &&
-						allBooks.map((book) => {
-							return (
-								<div className="card" style={{ width: "10rem" }} key={book.id}>
-									<img
-										className="card-img-top"
-										alt="Card image cap book image"
-										src={book.imageLink}
-									></img>
-									<div className="card-body">
-										<p className="card-text">{book.author}</p>
-										<h2 className="card-title">{book.title}</h2>
-										<p>€{book.price}</p>
-										<button onClick={(e) => addToCart(book)}>
-											Add to cart
-										</button>
+				<div classname="container">
+					<div class="row justify-content-center ">
+						{allBooks &&
+							allBooks.map((book) => {
+								return (
+									<div class="col-2 col-lg-3 d-flex justify-content-center">
+										<div
+											className="card h-100"
+											style={{ width: "15rem" }}
+											key={book.id}
+										>
+											<img
+												className="card-img-top"
+												alt="Card image cap book image"
+												src={book.imageLink}
+											></img>
+											<div className="card-body">
+												<p className="card-text">{book.author}</p>
+												<h2 className="card-title">{book.title}</h2>
+												<p>€{book.price}</p>
+												<button onClick={(e) => addToCart(book)}>
+													Add to cart
+												</button>
+											</div>
+										</div>
 									</div>
-								</div>
-							);
-						})}
+								);
+							})}
+					</div>
 				</div>
 			</div>
 		</div>
