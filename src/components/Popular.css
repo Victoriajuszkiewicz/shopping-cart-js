@@ -1,6 +1,6 @@
 .Popularmain {
 	background-color: #fbc97d;
-	height: 400px;
+	height: 450px;
 	margin-top: 40px;
 	width: 100%;
 	margin: 0 auto; /* Center horizontally */
@@ -16,4 +16,38 @@
 }
 #maincontainerpopular {
 	margin-top: 80px;
+}
+.allcardsinpopular {
+	width: 100%;
+	justify-content: space-evenly;
+}
+.populartitle {
+	font-weight: 800;
+	font-size: 16px;
+	padding: 2px;
+}
+.popularauthor {
+	font-size: 10px;
+	padding-bottom: 0;
+	margin: 0px;
+}
+.pricepopular {
+	font-size: 15px;
+	color: red;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.addtocartbut {
+	align-content: end;
+	border-radius: 33px;
+	padding: 5px 15px 5px 15px;
+	background-color: #ccc6a8;
+	color: white;
+	border: none;
+	font-weight: 700;
+	margin-top: 10px;
+}
+.addtocartbut:hover {
+	transform: scale(0.75);
 }

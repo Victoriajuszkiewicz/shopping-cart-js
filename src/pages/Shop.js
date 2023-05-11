@@ -8,7 +8,7 @@ export const Shop = (props) => {
 
 	return (
 		<div className="Shop">
-			<Popular />
+			<Popular allBooks={allBooks} addToCart={addToCart} />
 			<div className="container">
 				<h1 className="populartext">All Books</h1>
 				<div classname="container">
@@ -31,7 +31,10 @@ export const Shop = (props) => {
 												<p className="card-text">{book.author}</p>
 												<h2 className="card-title">{book.title}</h2>
 												<p>€{book.price}</p>
-												<button onClick={(e) => addToCart(book)}>
+												<button
+													className="addtocartbut"
+													onClick={(e) => addToCart(book)}
+												>
 													Add to cart
 												</button>
 											</div>

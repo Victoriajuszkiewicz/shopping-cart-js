@@ -44,7 +44,7 @@ export const Cart = (props) => {
 	};
 
 	function shippingPrice(cartItems) {
-		if (totalPrice(cartItems).toFixed(2) > 50) {
+		if (totalPrice(cartItems).toFixed(2) >= 50) {
 			return 0.0;
 		} else {
 			return 10;
