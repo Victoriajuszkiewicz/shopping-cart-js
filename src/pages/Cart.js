@@ -1,5 +1,6 @@
 import React from "react";
 import "./Cart.css";
+import SadBook from "../img/sadbook.png";
 
 export const Cart = (props) => {
 	const { cartItems, removeFromCart, setCartItems } = props;
@@ -57,30 +58,67 @@ export const Cart = (props) => {
 				<div class="row">
 					<div class="col">
 						{cartItems < 1 ? (
-							<h2>Your cart is empty. Continue shopping.</h2>
+							<div classname="container">
+								<h2>Your cart is empty.</h2>
+
+								<div className="line-1"></div>
+								<p>
+									Looks like you have not added anything in the cart. Go ahead
+									and explore our books...
+								</p>
+								<img
+									src={SadBook}
+									alt="no items in shopping cart sad book illustration"
+								/>
+							</div>
 						) : (
-							<h2>Your items</h2>
+							<div classname="container">
+								<h2 className="youritemscart">Your cart</h2>
+								<div className="line-1"></div>
+							</div>
 						)}
 						{cartItems &&
 							cartItems.map((i) => {
 								return (
-									<div>
-										<img src={i.imageLink} alt="this is poster for a book" />
-										<h2>{i.title}</h2>
-										<p>Author: {i.author}</p>
-										<p>Price: €{i.price}</p>
-										<p>Quantity:{i.quantity}</p>
-										<button onClick={() => handleAddQuantity(i.id)}>+</button>
-										<button onClick={() => handleSubtractQuantity(i.id)}>
-											-
-										</button>
-										<button onClick={() => removeFromCart(i.id)}>x</button>
+									<div className="container">
+										<div className="cartmain">
+											<div className="cartimageplace">
+												<img
+													className="cartimage"
+													src={i.imageLink}
+													alt="this is poster for a book"
+												/>
+											</div>
+											<div className="cartbody">
+												<h2 className="bookcarttitle">{i.title}</h2>
+												<p className="bookauthorcart">Author: {i.author}</p>
+
+												<p>Price: €{i.price}</p>
+												<div className="quantitycontainer">
+													<button
+														className="buttonsaddandremove"
+														onClick={() => handleAddQuantity(i.id)}
+													>
+														+
+													</button>
+													<p className="quantitynumber">{i.quantity}</p>
+													<button
+														className="buttonsaddandremove"
+														onClick={() => handleSubtractQuantity(i.id)}
+													>
+														-
+													</button>
+												</div>
+												<button onClick={() => removeFromCart(i.id)}>x</button>
+											</div>
+										</div>
 									</div>
 								);
 							})}
 					</div>
 					<div className="col" id="totalcart">
 						<h2>Summary</h2>
+						<div className="line-1"></div>
 						<h3>Products:€{totalPrice(cartItems).toFixed(2)} </h3>
 						<h3>Shipping:€{shippingPrice(cartItems)}</h3>
 						<h3>
