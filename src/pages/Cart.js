@@ -54,12 +54,12 @@ export const Cart = (props) => {
 
 	return (
 		<div>
-			<div classname="container" id="maincontainerpopular">
+			<div className="container" id="maincontainerpopular">
 				<div class="row">
 					<div class="col">
 						{cartItems < 1 ? (
 							<div classname="container">
-								<h2>Your cart is empty.</h2>
+								<h2 className="populartext">Your cart is empty.</h2>
 
 								<div className="line-1"></div>
 								<p>
@@ -73,7 +73,7 @@ export const Cart = (props) => {
 							</div>
 						) : (
 							<div classname="container">
-								<h2 className="youritemscart">Your cart</h2>
+								<h2 className="populartext">Your cart</h2>
 								<div className="line-1"></div>
 							</div>
 						)}
@@ -109,7 +109,15 @@ export const Cart = (props) => {
 														-
 													</button>
 												</div>
-												<button onClick={() => removeFromCart(i.id)}>x</button>
+											</div>
+
+											<div className="removebuttondiv">
+												<button
+													className="removebutton"
+													onClick={() => removeFromCart(i.id)}
+												>
+													x
+												</button>
 											</div>
 										</div>
 									</div>
@@ -117,7 +125,7 @@ export const Cart = (props) => {
 							})}
 					</div>
 					<div className="col" id="totalcart">
-						<h2>Summary</h2>
+						<h2 className="summarytext">Summary</h2>
 						<div className="line-1"></div>
 						<h3>Products:€{totalPrice(cartItems).toFixed(2)} </h3>
 						<h3>Shipping:€{shippingPrice(cartItems)}</h3>
@@ -125,7 +133,9 @@ export const Cart = (props) => {
 							Total:€
 							{(totalPrice(cartItems) + shippingPrice(cartItems)).toFixed(2)}
 						</h3>
-						<button>Checkout</button>
+						<button type="button" className="btn btn-success">
+							Checkout
+						</button>
 					</div>
 				</div>
 			</div>

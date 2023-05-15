@@ -1,5 +1,6 @@
 import React from "react";
 import Popular from "../components/Popular.js";
+import "./Shop.css";
 
 export const Shop = (props) => {
 	const { allBooks, addToCart } = props;

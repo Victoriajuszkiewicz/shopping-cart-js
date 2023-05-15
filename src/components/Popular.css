@@ -10,9 +10,12 @@
 	border-radius: 33px;
 }
 .populartext {
+	font-family: Imported;
 	text-align: left;
 	margin-top: 25px;
 	margin-bottom: 10px;
+	padding: 0;
+	font-size: 50px;
 }
 #maincontainerpopular {
 	margin-top: 80px;
