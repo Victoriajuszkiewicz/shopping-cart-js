@@ -20,7 +20,7 @@ export const Shop = (props) => {
 									<div class="col-2 col-lg-3 d-flex justify-content-center">
 										<div
 											className="card h-100"
-											style={{ width: "15rem" }}
+											style={{ width: "13rem" }}
 											key={book.id}
 										>
 											<img

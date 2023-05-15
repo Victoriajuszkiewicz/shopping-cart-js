@@ -1,11 +1,27 @@
 import React from "react";
 import "./Cart.css";
+
 import SadBook from "../img/sadbook.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Cart = (props) => {
 	const { cartItems, removeFromCart, setCartItems } = props;
 
-	console.log("this is what you need", cartItems);
+	//toast message when clicked on checkout button
+	const notify = () => {
+		toast.success("Checkout complete! Success you are ready to pay...", {
+			position: "top-center",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "colored",
+			
+		});
+	};
 
 	function totalPrice(cartItems = []) {
 		// initialize a variable to keep track of the total price(when there is zero items the total is zero initially)
@@ -133,9 +149,10 @@ export const Cart = (props) => {
 							Total:€
 							{(totalPrice(cartItems) + shippingPrice(cartItems)).toFixed(2)}
 						</h3>
-						<button type="button" className="btn btn-success">
+						<button onClick={notify} type="button" className="btn btn-success">
 							Checkout
 						</button>
+						<ToastContainer />
 					</div>
 				</div>
 			</div>
