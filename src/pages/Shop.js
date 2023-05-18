@@ -12,12 +12,12 @@ export const Shop = (props) => {
 			<Popular allBooks={allBooks} addToCart={addToCart} />
 			<div className="container">
 				<h1 className="populartext">All Books</h1>
-				<div classname="container">
+				<div className="container">
 					<div class="row justify-content-center ">
 						{allBooks &&
 							allBooks.map((book) => {
 								return (
-									<div class="col-2 col-lg-3 d-flex justify-content-center">
+									<div className="col-2 col-lg-3 d-flex justify-content-center">
 										<div
 											className="card h-100"
 											style={{ width: "13rem" }}

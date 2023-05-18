@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Logo from "..//img/logo.png";
 import "./NavBar.css";
 

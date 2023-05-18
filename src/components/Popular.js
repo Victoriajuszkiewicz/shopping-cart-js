@@ -15,12 +15,12 @@ const Popular = (props) => {
 		<div className="container" id="maincontainerpopular">
 			<h1 className="populartext">Popular</h1>
 			<div className="Popularmain">
-				<div classname="container">
-					<div class="row d-flex justify-content-between">
+				<div className="container">
+					<div className="row d-flex justify-content-between">
 						{popularBooks &&
 							popularBooks.slice(0, 5).map((book) => {
 								return (
-									<div class="col-2 col-lg-2 d-flex">
+									<div className="col-2 col-lg-2 d-flex">
 										<div className="allcardsinpopular" key={book.id}>
 											<img
 												alt="Card image cap book image"

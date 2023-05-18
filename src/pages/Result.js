@@ -10,7 +10,7 @@ const Result = (props) => {
 				{searchResult.map((book) => (
 					<div key={book.id}>
 						<div className="container">
-							<div class="row justify-content-center ">
+							<div className="row justify-content-center ">
 								<div className="col-2 col-lg-3 d-flex justify-content-center">
 									<div
 										className="card h-100"

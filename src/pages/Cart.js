@@ -19,7 +19,6 @@ export const Cart = (props) => {
 			draggable: true,
 			progress: undefined,
 			theme: "colored",
-			 
 		});
 	};
 
@@ -71,10 +70,10 @@ export const Cart = (props) => {
 	return (
 		<div>
 			<div className="container" id="maincontainerpopular">
-				<div class="row">
-					<div class="col">
+				<div className="row">
+					<div className="col">
 						{cartItems < 1 ? (
-							<div classname="container">
+							<div className="container">
 								<h2 className="populartext">Your cart is empty.</h2>
 
 								<div className="line-1"></div>
