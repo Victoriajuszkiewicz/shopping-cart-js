@@ -19,7 +19,7 @@ function App() {
 	const [allBooks, setAllBooks] = useState([]);
 	//All items clicked(added) to cart
 	const [cartItems, setCartItems] = useState([]);
-	const [searchResult, setSearchResult] = useState([]);
+	const [searchResult, setSearchResult] = useState("");
 
 	useEffect(() => {
 		getBooks();
@@ -103,8 +103,12 @@ function App() {
 		<div className="App">
 			<Router>
 				<PromoBar />
-				<NavBar getProduct={getProduct} cartItems={cartItems} />
-				
+				<NavBar
+					getProduct={getProduct}
+					cartItems={cartItems}
+					getBooks={getBooks}
+				/>
+
 				<Routes>
 					<Route
 						path="/"
@@ -127,6 +131,7 @@ function App() {
 								getProduct={getProduct}
 								allBooks={allBooks}
 								searchResult={searchResult}
+								addToCart={addToCart}
 							/>
 						}
 					/>

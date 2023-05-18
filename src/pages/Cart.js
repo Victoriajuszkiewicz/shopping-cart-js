@@ -19,7 +19,7 @@ export const Cart = (props) => {
 			draggable: true,
 			progress: undefined,
 			theme: "colored",
-			
+			 
 		});
 	};
 

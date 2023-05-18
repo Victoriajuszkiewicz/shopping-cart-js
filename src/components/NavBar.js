@@ -1,34 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCart } from "phosphor-react";
 import { useEffect, useState } from "react";
 import Logo from "..//img/logo.png";
 import "./NavBar.css";
 
 const NavBar = (props) => {
-	const { getProduct, cartItems } = props;
-
-	const EMPTY_FORM = {};
-	const [formBook, setFormBook] = useState([]);
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		let formDetails = formBook;
-		getProduct(formDetails.book);
-		setFormBook(EMPTY_FORM);
-	};
+	const { getProduct, cartItems, getBooks } = props;
+	const [formBook, setFormBook] = useState("");
+	const navigate = useNavigate();
 
 	const handleChange = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		let newForm = { ...formBook };
-		console.log(newForm);
-		newForm[name] = value;
-		setFormBook((state) => ({
-			...state,
-			[name]: value,
-		}));
+		setFormBook(e.target.value);
 	};
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		await getBooks(); // Wait for data to be fetched
+		getProduct(formBook); // Search for the product
+		navigate("/result");
+		setFormBook("");
+	};
+
 	function countTotalItemsQuantity(cartItems) {
 		let total = cartItems.map((item) => item.quantity);
 		console.log("This is SUMMMMM", total.length);
@@ -56,22 +48,10 @@ const NavBar = (props) => {
 					Affordable books online"
 					/>
 				</Link>
-
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span className="navbar-toggler-icon"></span>
-				</button>
-
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<form
-						className="form-inline my-2 my-lg-0 input-group mx-auto"
+						onSubmit={handleSubmit}
+						className="form-inline col-12 col-lg-auto mb-3 mb-lg-0 y-2 my-lg-0 input-group mx-auto"
 						style={{ maxWidth: "50%", paddingTop: 20 }}
 					>
 						<input
@@ -79,6 +59,8 @@ const NavBar = (props) => {
 							type="search"
 							placeholder="Search for a book..."
 							aria-label="Search"
+							value={formBook}
+							onChange={handleChange}
 						></input>
 						<button
 							className="btn btn-light my-2 my-sm-0"
@@ -88,17 +70,16 @@ const NavBar = (props) => {
 							Search
 						</button>
 					</form>
-					<ul className="navbar-nav mr-auto">
-						<li className="nav-item">
-							<Link className="nav-link" to="/cart">
-								<button className="btn btn-primary" id="buttoncart">
-									<ShoppingCart size={20} />
-									<span className="badge badge-light">
-										{countTotalItemsQuantity(cartItems)}
-									</span>
-								</button>
-							</Link>
-						</li>
+
+					<ul className="navbar-brand">
+						<Link className="nav-link" to="/cart">
+							<button className="btn btn-primary" id="buttoncart">
+								<ShoppingCart size={20} />
+								<span className="badge badge-light">
+									{countTotalItemsQuantity(cartItems)}
+								</span>
+							</button>
+						</Link>
 					</ul>
 				</div>
 			</nav>
