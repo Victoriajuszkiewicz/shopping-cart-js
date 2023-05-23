@@ -98,7 +98,6 @@ function App() {
 		}
 	}
 
-	console.log(cartItems);
 	return (
 		<div className="App">
 			<Router>

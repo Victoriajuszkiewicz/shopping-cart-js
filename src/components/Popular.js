@@ -15,17 +15,17 @@ const Popular = (props) => {
 		<div className="container" id="maincontainerpopular">
 			<h1 className="populartext">Popular</h1>
 			<div className="Popularmain">
-				<div className="container">
-					<div className="row d-flex justify-content-between">
-						{popularBooks &&
-							popularBooks.slice(0, 5).map((book) => {
-								return (
-									<div className="col-2 col-lg-2 d-flex">
-										<div className="allcardsinpopular" key={book.id}>
+				<div className="row allcardsinpopular">
+					{popularBooks &&
+						popularBooks.slice(0, 5).map((book) => {
+							return (
+								<div className="col-6 col-sm-6 col-lg-2">
+									<div className="allcardsinpopular" key={book.id}>
+										<div className="card bg-transparent ">
 											<img
-												alt="Card image cap book image"
+												className="imageofcard"
+												alt="Card  cap book "
 												src={book.imageLink}
-												style={{ width: 150 }}
 											></img>
 											<h5 className="populartitle">{book.title}</h5>
 											<p className="popularauthor">By {book.author}</p>
@@ -38,9 +38,9 @@ const Popular = (props) => {
 											</button>
 										</div>
 									</div>
-								);
-							})}
-					</div>
+								</div>
+							);
+						})}
 				</div>
 			</div>
 		</div>

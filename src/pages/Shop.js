@@ -5,7 +5,7 @@ import "./Shop.css";
 export const Shop = (props) => {
 	const { allBooks, addToCart } = props;
 
-	console.log(allBooks);
+	// console.log(allBooks);
 
 	return (
 		<div className="Shop">
@@ -13,11 +13,11 @@ export const Shop = (props) => {
 			<div className="container">
 				<h1 className="populartext">All Books</h1>
 				<div className="container">
-					<div class="row justify-content-center ">
+					<div className="row justify-content-center ">
 						{allBooks &&
 							allBooks.map((book) => {
 								return (
-									<div className="col-2 col-lg-3 d-flex justify-content-center">
+									<div className="col-12 col-sm-8 col-md-8 col-lg-3 d-flex justify-content-center">
 										<div
 											className="card h-100"
 											style={{ width: "13rem" }}
@@ -25,7 +25,7 @@ export const Shop = (props) => {
 										>
 											<img
 												className="card-img-top"
-												alt="Card image cap book image"
+												alt="Card  cap book "
 												src={book.imageLink}
 											></img>
 											<div className="card-body">

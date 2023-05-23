@@ -26,7 +26,7 @@ export const Cart = (props) => {
 		// initialize a variable to keep track of the total price(when there is zero items the total is zero initially)
 		let total = 0;
 		// log the current value of the total variable to the console
-		console.log(total);
+		// console.log(total);
 		// use the map() method to iterate over each item in the cartItems array
 		// and update the total variable by multiplying the item's quantity and price properties
 		cartItems.map((item) => (total = total + item.quantity * item.price));

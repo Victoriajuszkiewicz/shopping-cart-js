@@ -1,14 +1,15 @@
+/* Mobile version */
 .Popularmain {
 	background-color: #fbc97d;
-	height: 450px;
-	margin-top: 40px;
-	width: 100%;
-	margin: 0 auto; /* Center horizontally */
-	display: flex; /* Enable flexbox layout */
+	/* height: 450px; */
+	margin: 20px 15px 15px 5px;
+	border-radius: 33px;
+	padding: 10px;
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 33px;
 }
+
 .populartext {
 	font-family: Imported;
 	text-align: left;
@@ -17,23 +18,39 @@
 	padding: 0;
 	font-size: 50px;
 }
+.card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	box-sizing: border-box;
+	border: none;
+}
+
 #maincontainerpopular {
 	margin-top: 80px;
 }
+
 .allcardsinpopular {
 	width: 100%;
+	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
+
 .populartitle {
 	font-weight: 800;
 	font-size: 16px;
 	padding: 2px;
 }
+
 .popularauthor {
 	font-size: 10px;
 	padding-bottom: 0;
 	margin: 0px;
 }
+
 .pricepopular {
 	font-size: 15px;
 	color: red;
@@ -51,6 +68,34 @@
 	font-weight: 700;
 	margin-top: 10px;
 }
+
 .addtocartbut:hover {
 	transform: scale(0.75);
+}
+
+.imageofcard {
+	width: 50px;
+}
+
+/* tablet */
+@media screen and (min-width: 600px) {
+	.imageofcard {
+		width: 100px;
+	}
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+	.imageofcard {
+		width: 150px;
+	}
+	.Popularmain {
+		background-color: #fbc97d;
+		height: 450px;
+		margin-top: 40px;
+		border-radius: 33px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
