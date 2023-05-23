@@ -1,7 +1,7 @@
 import React from "react";
 
 const Result = (props) => {
-	const { getProduct, allBooks, searchResult, addToCart } = props;
+	const { searchResult, addToCart } = props;
 
 	return (
 		<div>
@@ -19,7 +19,7 @@ const Result = (props) => {
 									>
 										<img
 											className="card-img-top"
-											alt="Card image cap book image"
+											alt="Card  cap book "
 											src={book.imageLink}
 										></img>
 										<div className="card-body">
