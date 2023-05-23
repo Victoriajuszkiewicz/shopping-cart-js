@@ -19,6 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## Live version
+
+https://main--bookish-shop.netlify.app/
+
 ## Using the Application
 
 Once the application is running, you can add items to the cart by clicking the "Add to Cart" button next to each item. You can remove items from the cart by clicking the "Remove" button next to each item in the cart.
